@@ -1,0 +1,18 @@
+@import '../../scss/main.scss';
+
+.popularTshirts {
+    @include flex-col(center, center);
+    margin-bottom: 50px;
+    &__collection {
+        @include text(13px, 400, $DARKBEIGE);
+        font-family: 'Poppins', sans-serif;
+    }
+    &__title {
+        @include text(30px, 600, $BLACK);
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 30px;
+    }
+    &__items {
+        @include flex-row(space-around)
+    }
+}

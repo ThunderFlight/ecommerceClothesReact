@@ -1,0 +1,86 @@
+@import '../../scss/main.scss';
+
+.wrapper {
+    @include flex(space-between, center);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    &__navigation {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        .navigationElement {
+            @include text(13px, 500, $BLACK);
+            font-family: 'Poppins', sans-serif;
+            margin-left: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+        .navigationElement:hover::after {
+            content: '';
+            background-color: black;
+            
+            height: 1px;
+            width: 100%;
+            
+            display: block;
+            position: absolute;
+            
+            animation: UnderLineNavigation 1s;
+            transition: all 1s;
+            
+        }
+        .navigationElement:nth-child(1) {
+            margin-left: 0px;
+        }
+    }
+    &__logo {
+        width: 119px;
+        .logoTshirtTopText {
+            @include text(23px, 800, $BLACK);
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .logoTshirtLine {
+            width: 100%;
+            border: 1px solid $GRAY;
+            margin: 0 auto;
+        }
+        .logoTshirtBottomText {
+            @include text(15px, 400, $GRAY);
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 20px;
+        }
+        
+    }
+    &__userButtons {
+        width: 220px;
+        @include flex(space-between);
+        .imageButtonsUser {
+            width: 16px;
+            height: 18px;
+        }
+        .userButtonsBuySearch {
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .logInButton {
+            @include text(14px, 600, $BLACK);
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+    }
+    
+}
+
+@keyframes UnderLineNavigation {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}

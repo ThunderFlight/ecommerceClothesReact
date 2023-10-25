@@ -1,0 +1,24 @@
+@import '../../scss/main.scss';
+
+.bannerShopCollection {
+    @include flex(space-around, center);
+    background-color: #FAEDEB;
+    margin-bottom: 100px;
+    &__wrapperCheckCollection {
+        .title {
+            @include text(15px, 500, $DARKBEIGE);
+            font-family: 'Poppins', sans-serif;
+        }
+        .description {
+            @include text(60px, 800, $BLACK);
+            letter-spacing: 2px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+        }
+    }
+    &__wrapperBannerImage {
+        .bannerImage {
+            height: 700px;
+        }
+    }
+}

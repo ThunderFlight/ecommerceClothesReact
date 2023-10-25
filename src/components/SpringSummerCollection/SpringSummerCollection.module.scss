@@ -1,0 +1,17 @@
+@import "../../scss/main.scss";
+
+.SpringSummerCollection {
+  position: relative;
+  &__backgroundRectangle {
+    height: 690px;
+    width: 650px;
+
+    background-color: $PINK;
+
+    .aboutCollection {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+  }
+}
