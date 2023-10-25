@@ -1,18 +1,18 @@
-@import '../../scss/main.scss';
+@import '../../../scss/main.scss';
 
-.popularTshirts {
+.galleryProductItems {
     @include flex-col(center, center);
     margin-bottom: 50px;
-    &__collection {
+    .collectionName {
         @include text(13px, 400, $DARKBEIGE);
         font-family: 'Poppins', sans-serif;
     }
-    &__title {
+    .title {
         @include text(30px, 600, $BLACK);
         font-family: 'Poppins', sans-serif;
         margin-bottom: 30px;
     }
-    &__items {
+    .productItems {
         @include flex-row(space-around)
     }
 }

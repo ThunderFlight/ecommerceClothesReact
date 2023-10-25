@@ -24,12 +24,12 @@ const Footer = () => {
             />
             <Button children="Subcribe" size="default" />
           </form>
-          <ul className={styles.wrapperContainer__list}>
-            <li className={styles.element}>But T-Shirts</li>
-            <li className={styles.element}>Women</li>
-            <li className={styles.element}>Men</li>
-            <li className={styles.element}>About</li>
-            <li className={styles.element}>Contact</li>
+          <ul className={styles.navigation}>
+            <li>But T-Shirts</li>
+            <li>Women</li>
+            <li>Men</li>
+            <li>About</li>
+            <li>Contact</li>
           </ul>
           <div className={styles.wrapperContainer__socialNetwork}>
             <button className={styles.button}>

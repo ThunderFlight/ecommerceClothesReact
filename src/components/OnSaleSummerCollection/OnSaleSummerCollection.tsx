@@ -1,10 +1,8 @@
-import styles from './OnSaleSummerCollection.module.scss'
+import GalleryProductItems from '../common/GalleryProductItems/GalleryProductItems';
 
 const OnSaleSummerCollection = () => {
     return (
-        <section className={styles.OnSaleSummerCollection}>
-            
-        </section>
+        <GalleryProductItems title='On Sale T-Shirts'/>
     )
 }
 
