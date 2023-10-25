@@ -1,1 +1,81 @@
-@import '../../scss/main.scss';
+@import "../../scss/main.scss";
+
+.Footer {
+  &__wrapper {
+    @include flex(center, center);
+    background-color: $PINK;
+
+    padding: 100px 0px 50px 0px;
+    .wrapperContainer {
+      display: inline-block;
+      width: 550px;
+      @include flex-col(center, center);
+
+      &__title {
+        @include text(20px, 600, $BLACK);
+        font-family: "Poppins", sans-serif;
+      }
+      &__description {
+        @include text(13px, 400, $GRAY);
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 20px;
+      }
+      &__formSubscribe {
+        @include flex-row(center, center);
+        width: 100%;
+
+        margin-bottom: 60px;
+        .input {
+          height: 40px;
+          width: 100%;
+          margin-right: 10px;
+
+          border: 1px solid $GRAY;
+        }
+      }
+      &__list {
+        @include flex-row(center, center);
+        list-style: none;
+        margin-bottom: 30px;
+        .element {
+          @include text(15px, 400, $GRAY);
+          font-family: "Poppins", sans-serif;
+
+          margin-right: 50px;
+        }
+      }
+
+      &__socialNetwork {
+        @include flex-row(center, center);
+        .button {
+          @include flex(center, center);
+
+          margin-right: 15px;
+          width: 35px;
+          height: 35px;
+          border: 0px;
+
+          background-color: $WHITE;
+
+          cursor: pointer;
+        }
+
+        .button:last-child {
+          margin-right: 0px;
+        }
+        .button:hover {
+          background-color: rgba($color: #000000, $alpha: 0);
+        }
+      }
+    }
+  }
+  &__blackLine {
+    @include flex(center, center);
+    background-color: $BLACK;
+    height: 80px;
+    .textBlackLine {
+        @include text(15, 400, $WHITE);
+        font-family: "Poppins", sans-serif;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import BannerShopCollection from "./components/BannerShopCollection/BannerShopCollection";
 import EveryDayCollection from "./components/EveryDayCollection/EveryDayCollection";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import MenOrWomenCategory from "./components/MenOrWomenCategory/MenORWomenCategory";
 import NewCollectionTshirts from "./components/NewCollectionTshirts/NewCollectionTshirts";
@@ -22,6 +23,7 @@ function App() {
         <ReviewsProduct></ReviewsProduct>
         <MenOrWomenCategory></MenOrWomenCategory>
       </main>
+      <Footer></Footer>
     </div>
   );
 }
