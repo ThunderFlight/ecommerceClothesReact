@@ -2,7 +2,7 @@
 
 .newCollectionTshirts {
   @include flex-col(center, center);
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   &__backgroundImage {
     background-image: url(../../assets/newCollectionBackground.jpg);
     background-attachment: fixed;

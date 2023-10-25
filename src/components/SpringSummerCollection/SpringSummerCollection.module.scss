@@ -2,16 +2,39 @@
 
 .SpringSummerCollection {
   position: relative;
+  height: 700px;
+  width: 50%;
+  margin-bottom: 100px;
   &__backgroundRectangle {
-    height: 690px;
-    width: 650px;
+    height: 100%;
+    width: 100%;
 
     background-color: $PINK;
 
     .aboutCollection {
+      @include flex-row(space-between, center);
       position: absolute;
-      left: 0px;
-      top: 0px;
+      right: -500px;
+      top: -60px;
+      &__colectionPreViewImage {
+        margin-right: 50px;
+      }
+      &__collectionDescription {
+        width: 570px;
+        .sex {
+          @include text(13px, 400, $DARKBEIGE);
+          font-family: "Poppins", sans-serif;
+        }
+        .title {
+          @include text(30px, 600, $BLACK);
+          font-family: "Poppins", sans-serif;
+        }
+        .description {
+          @include text(13px, 400, $DARKBEIGE);
+          font-family: "Poppins", sans-serif;
+          margin-bottom: 30px;
+        }
+      }
     }
   }
 }

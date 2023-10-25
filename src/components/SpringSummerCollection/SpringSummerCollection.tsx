@@ -7,10 +7,10 @@ const SpringSummerCollection = () => {
     <section className={styles.SpringSummerCollection}>
       <div className={styles.SpringSummerCollection__backgroundRectangle}>
         <div className={styles.aboutCollection}>
-          <img
-            src={summerSpringCollectionImage}
-            className={styles.aboutCollection__colectionPreViewImage}
-          />
+          <div className={styles.aboutCollection__colectionPreViewImage}>
+            <img
+              src={summerSpringCollectionImage}/>
+          </div>
           <div className={styles.aboutCollection__collectionDescription}>
             <p className={styles.sex}>WOMEN</p>
             <h2 className={styles.title}>

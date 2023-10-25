@@ -1,0 +1,39 @@
+@import "../../scss/main.scss";
+
+.ReviewsProduct {
+  @include flex(center, center);
+  margin-bottom: 100px;
+  width: 100%;
+  &__wrapper {
+    width: 540px;
+    .title {
+      @include text(30px, 700, $BLACK);
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+
+      margin-bottom: 30px
+    }
+    .comment {
+      @include text(15px, 600, $BLACK);
+      font-family: "Poppins", sans-serif;
+      text-decoration: underline;
+      text-align: center;
+
+      margin-bottom: 20px
+    }
+    .ratingNameCommentator {
+      &__rating {
+        @include flex-row(center);
+        list-style-image: url(../../assets/icons8-звезда-с-заливкой-25.png);
+        .star {
+          margin-left: 22px;
+        }
+      }
+      &__nameСommentator {
+        @include text(13px, 400, $GRAY);
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+      }
+    }
+  }
+}
