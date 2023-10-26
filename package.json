@@ -11,12 +11,12 @@
   },
   "dependencies": {
     "@types/jest": "^29.5.6",
-    "@types/node": "^20.8.8",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "^20.8.9",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
@@ -26,6 +26,10 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "sass": "^1.69.4",
+    "stylelint": "^15.11.0",
+    "stylelint-config-clean-order": "^5.2.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-scss": "^5.2.1",
     "typescript": "^5.2.2",
     "vite": "^4.4.5"
   }

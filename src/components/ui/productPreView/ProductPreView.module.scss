@@ -1,0 +1,26 @@
+@import '@styles/main.scss';
+
+.productPreView {
+    &__imageProduct {
+            width: 300px;
+            height: 350px;
+    }
+    .descriptionProduct {
+        margin-left: 20px;
+        &__sexProduct {
+            @include text(13px, 400, $darkBeige);
+
+            font-family: 'Poppins', sans-serif;
+        }
+        &__nameProduct {
+            @include text(20px, 600, $black);
+
+            font-family: 'Poppins', sans-serif;
+        }
+        &__priceProduct {
+            @include text(13px, 700, $darkBeige);
+
+            font-family: 'Poppins', sans-serif;
+        }
+    }
+}

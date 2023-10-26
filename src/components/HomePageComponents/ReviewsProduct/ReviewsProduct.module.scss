@@ -1,0 +1,50 @@
+@import "@styles/main.scss";
+
+.reviewsProduct {
+  @include flex(center, center);
+
+  width: 100%;
+  margin-bottom: 100px;
+
+  &__wrapper {
+    width: 540px;
+
+    .title {
+      @include text(30px, 700, $black);
+
+      margin-bottom: 30px;
+      font-family: Poppins, sans-serif;
+      text-align: center;
+    }
+
+    .comment {
+      @include text(15px, 600, $black);
+
+      margin-bottom: 20px;
+      font-family: Poppins, sans-serif;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    .ratingNameCommentator {
+      @include flex-col(center, center);
+      
+      &__rating {
+        @include flex-row(center);
+
+        list-style-image: url("@assets/star.png");
+
+        .star {
+          margin-left: 25px;
+        }
+      }
+      
+      &__nameСommentator {
+        @include text(13px, 400, $gray);
+
+        font-family: Poppins, sans-serif;
+        text-align: center;
+      }
+    }
+  }
+}

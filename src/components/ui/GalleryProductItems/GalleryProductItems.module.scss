@@ -1,0 +1,21 @@
+@import '@styles/main.scss';
+
+.galleryProductItems {
+    @include flex-col(center, center);
+
+    margin-bottom: 50px;
+    .collectionName {
+        @include text(13px, 400, $darkBeige);
+
+        font-family: 'Poppins', sans-serif;
+    }
+    .title {
+        @include text(30px, 600, $black);
+
+        margin-bottom: 30px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .productItems {
+        @include flex-row(space-around)
+    }
+}

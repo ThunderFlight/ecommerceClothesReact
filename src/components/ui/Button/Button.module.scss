@@ -1,0 +1,29 @@
+@import '@styles/main.scss';
+.button {
+    @include text(15px, 400, $white);
+
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+
+    background-color: $black;
+    border: 0px;
+
+    transition: color 0.2s;
+}
+
+.button:hover {
+    color: gray;
+}
+
+.default {
+    padding: 10px 20px 10px 20px;
+}
+
+.large {
+    padding: 0px;
+}
+
+.small {
+    padding: 0px;
+}

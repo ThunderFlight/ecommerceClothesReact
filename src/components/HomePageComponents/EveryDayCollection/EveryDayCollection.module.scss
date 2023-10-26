@@ -1,0 +1,30 @@
+@import '@styles/main.scss';
+
+.everyDayCollection {
+    @include flex-row(center);
+
+    margin-bottom: 100px;
+    &__leftSideImage {
+        .preViewImage {
+            margin-bottom: 20px
+        }
+        .description {
+            @include flex-col(center, center);
+            &__sex {
+                @include text(13px, 400, $darkBeige);
+
+                font-family: 'Poppins', sans-serif;
+                text-align: center
+            }
+            &__collection {
+                @include text(35px, 600, $black);
+
+                font-family: 'Poppins', sans-serif;
+                text-align: center;
+            }
+        }
+    }
+    &__rightSideImage {
+        height: 600px;
+    }
+}
