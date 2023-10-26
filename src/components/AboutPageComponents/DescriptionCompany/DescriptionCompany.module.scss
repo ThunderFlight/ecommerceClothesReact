@@ -1,0 +1,39 @@
+@import '@styles/main.scss';
+
+.descriptionCompany {
+    @include flex-col(center, center);
+
+    margin-bottom: 100px;
+    &__wrapperTitle {
+        @include flex-col(center, center);
+
+        margin-bottom: 20px;
+    
+        .title {
+            @include text(50px, 600, $black);
+
+            margin-bottom: 20px;
+            font-family: "Poppins", sans-serif;
+        }
+    }
+
+    &__topDescription {
+        @include text(15px, 600, $black);
+
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: 10px;
+
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+    }
+
+    &__bottomDescription {
+        @include text(12px, 400, $darkBeige);
+
+        width: 100%;
+        max-width: 670px;
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+    }
+}

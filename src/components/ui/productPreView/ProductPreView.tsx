@@ -1,11 +1,16 @@
+import { FC } from "react";
 import styles from "./ProductPreView.module.scss";
 import itemProduct from "@assets/itemProductPreView.jpg";
 
-export const ProductPreView = () => {
+interface props {
+  sizeImage: string;
+}
+
+export const ProductPreView:FC<props> = ({sizeImage}) => {
   return (
     <div className={styles.productPreView}>
       <img
-        className={styles.productPreView__imageProduct}
+        className={styles[sizeImage]}
         src={itemProduct}
         alt="item product"
       />

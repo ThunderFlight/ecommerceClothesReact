@@ -9,6 +9,10 @@
     position: relative;
     margin-left: 20px;
   }
+  
+  .navigationElement:first-child {
+    margin-left: 0px;
+  }
 
   .navigationElement > a {
     @include text(13px, 500, $black);
@@ -35,6 +39,19 @@
     margin-left: 0px;
   }
 }
+
+.navigation {
+    @include flex-row(center, center);
+  
+    margin-bottom: 30px;
+    list-style: none;
+  }
+  .navigation > li {
+    @include text(15px, 400, $gray);
+  
+    margin-right: 50px;
+    font-family: "Poppins", sans-serif;
+  }
 
 @keyframes UnderLineNavigation {
   from {

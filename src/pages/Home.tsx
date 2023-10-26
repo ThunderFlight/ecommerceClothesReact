@@ -10,11 +10,11 @@ const HomePage = () => {
   return (
     <main>
       <BannerShopCollection />
-      <GalleryProductItems title="Popular T-Shirts" />
+      <GalleryProductItems title="Popular T-Shirts" sizeImage="default"/>
       <EveryDayCollection />
       <NewCollectionTshirts />
       <SpringSummerCollection />
-      <GalleryProductItems title="On Sale T-Shirts" />
+      <GalleryProductItems title="On Sale T-Shirts" sizeImage="default"/>
       <ReviewsProduct />
       <MenOrWomenCategory />
     </main>

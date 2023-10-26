@@ -3,15 +3,16 @@ import basket from "@assets/basket.png";
 import magnifyingGlass from "@assets/magnifyingGlass.png";
 import Navigation from "../Navigation/Navigation";
 
-
 const Header = () => {
   return (
     <div className={styles.wrapper}>
-      <Navigation styleText='list' />
+      <Navigation styleText="list" />
       <div className={styles.wrapper__logo}>
-        <h2 className={styles.logoTshirtTopText}>T-SHIRTS</h2>
-        <div className={styles.logoTshirtLine}></div>
-        <h3 className={styles.logoTshirtBottomText}>store</h3>
+        <a href="/">
+          <h2 className={styles.logoTshirtTopText}>T-SHIRTS</h2>
+          <div className={styles.logoTshirtLine}></div>
+          <h3 className={styles.logoTshirtBottomText}>store</h3>
+        </a>
       </div>
       <div className={styles.wrapper__userButtons}>
         <button className={styles.userButtonsBuySearch}>
