@@ -25,4 +25,14 @@ export default defineConfig({
       },
     ],
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        includePaths: ['./src/styles/main.scss'],
+        additionalData: `
+        @import '@styles/main.scss';
+        `,
+      }
+    }
+  }
 });
