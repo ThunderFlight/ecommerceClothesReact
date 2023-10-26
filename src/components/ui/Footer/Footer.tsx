@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className={styles.Footer__blackLine}>
+      <div className={styles.footer__blackLine}>
         <p className={styles.textBlackLine}>
           T-Shirts Store © 2023 | Powered by T-Shirts Store
         </p>

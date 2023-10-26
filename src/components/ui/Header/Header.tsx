@@ -1,17 +1,13 @@
 import styles from "./Header.module.scss";
 import basket from "@assets/basket.png";
 import magnifyingGlass from "@assets/magnifyingGlass.png";
+import Navigation from "../Navigation/Navigation";
+
 
 const Header = () => {
   return (
     <div className={styles.wrapper}>
-      <ul className={styles.wrapper__navigation}>
-        <li className={styles.navigationElement}>BUY T-SHIRTS</li>
-        <li className={styles.navigationElement}>WOMEN</li>
-        <li className={styles.navigationElement}>MEN</li>
-        <li className={styles.navigationElement}>ABOUT</li>
-        <li className={styles.navigationElement}>CONTACT</li>
-      </ul>
+      <Navigation styleText='list' />
       <div className={styles.wrapper__logo}>
         <h2 className={styles.logoTshirtTopText}>T-SHIRTS</h2>
         <div className={styles.logoTshirtLine}></div>
