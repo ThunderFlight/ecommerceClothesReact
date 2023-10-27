@@ -1,0 +1,65 @@
+@import '@styles/main.scss';
+
+.historyCompany {
+    @include flex-col(center, center);
+
+    margin-bottom: 120px;
+    &__title {
+        @include text(35px, 600, $black);
+
+        font-family: "Poppins", sans-serif;
+    }
+
+    &__littleDescription {
+        @include text(13px, 400, $darkBeige);
+
+        margin-bottom: 20px;
+        font-family: "Poppins", sans-serif;
+        text-align: center
+    }
+
+    &__history {
+        @include flex-row(center, center);
+
+        height: 420px;
+        
+        .historyDescription {
+            max-width: 570px;
+            height: 100%;margin: 0px;
+            padding: 50px;
+
+            background-color: $pink;
+            &__wrapperText {
+
+                .title {
+                    @include text(30px, 600, $black);
+    
+                    margin-bottom: 20px;
+                    font-family: "Poppins", sans-serif;
+                }
+                
+                .subtitle {
+                    @include text(15px, 600, $black);
+    
+                    margin-bottom: 20px;
+                    font-family: "Poppins", sans-serif;
+                }
+    
+                .description {
+                    @include text(15px, 400, $darkBeige);
+    
+                    font-family: "Poppins", sans-serif;
+                }
+            }
+        }
+
+        .historyImage {
+            width: 570px;
+            height: 100%;
+            margin: 0px;
+
+            background-image: url(@assets/HistoryCompanyBackground.jpg);
+            background-position: center;
+        }
+    }
+}

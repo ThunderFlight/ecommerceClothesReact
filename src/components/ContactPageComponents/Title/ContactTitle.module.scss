@@ -1,0 +1,19 @@
+@import '@styles/main.scss';
+
+.contactTitle {
+    @include flex-col(center, center);
+
+    margin-bottom: 50px;
+    &__name {
+        @include text(60px, 600, $black);
+
+        font-family: "Poppins", sans-serif;
+    }
+
+    &__description {
+        @include text(15px, 600, $black);
+
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+    }
+}

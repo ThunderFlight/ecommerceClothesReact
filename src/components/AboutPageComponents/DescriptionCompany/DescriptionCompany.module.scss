@@ -6,8 +6,6 @@
     margin-bottom: 100px;
     &__wrapperTitle {
         @include flex-col(center, center);
-
-        margin-bottom: 20px;
     
         .title {
             @include text(50px, 600, $black);

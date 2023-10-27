@@ -1,0 +1,107 @@
+@import "@styles/main.scss";
+
+.contact {
+    margin-bottom: 50px;
+  &__informationWrapper {
+    @include flex(flex-end);
+
+    position: relative;
+    width: 50%;
+    padding: 150px 150px 150px 0px;
+    background-color: $pink;
+    .textWrapper {
+      @include flex-col(flex-end, start);
+      &__title {
+        @include text(30px, 600, $black);
+
+        font-family: "Poppins", sans-serif;
+      }
+
+      &__description {
+        @include text(13px, 400, $darkBeige);
+
+        margin-bottom: 30px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      &__information {
+        list-style: none;
+
+        .elements {
+          @include text(15px, 400, $black);
+
+          cursor: pointer;
+          margin-bottom: 10px;
+          font-family: "Poppins", sans-serif;
+          text-decoration: underline;
+        }
+
+        .phone {
+          cursor: default;
+          text-decoration: none;
+        }
+
+        .elements > img {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  .form {
+    @include flex-col(center, start);
+
+    position: absolute;
+    top: 50px;
+    right: -500px;
+
+    width: 570px;
+    padding: 40px;
+
+    background-color: $white;
+    box-shadow: 0px -1px 32px 4px rgba(182, 179, 179, 0.75);
+    .wrapperName {
+      @include flex-row(center, center);
+
+        margin: 0px;
+      margin-bottom: 20px;
+      &__firstName {
+        margin-right: 25px;
+      }
+
+      &__inputName {
+        width: 225px;
+        height: 40px;
+        padding-left: 20px;
+
+        font-family: "Poppins", sans-serif;
+
+        border: 1 px solid $gray;
+      }
+    }
+    .email {
+      width: 100%;
+      max-width: 475px;
+      height: 40px;
+      margin-bottom: 20px;
+      padding-left: 20px;
+
+      font-family: "Poppins", sans-serif;
+
+      border: 1px solid $gray;
+    }
+
+    .textForm {
+      width: 100%;
+      max-width: 475px;
+      height: 130px;
+      margin-bottom: 20px;
+      padding-top: 10px;
+      padding-left: 20px;
+
+      font-family: "Poppins", sans-serif;
+
+      border: 1px solid $gray;
+    }
+  }
+}
