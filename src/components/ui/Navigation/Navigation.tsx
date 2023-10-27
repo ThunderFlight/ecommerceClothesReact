@@ -2,7 +2,7 @@ import { FC } from 'react';
 import styles from './Navigation.module.scss'
 
 const navigationArray = [
-  { "BUY T-SHIRTS": "/" },
+  { "BUY T-SHIRTS": "/shop" },
   { WOMEN: "/womenCategory" },
   { MEN: "/menCategory" },
   { ABOUT: "/about" },
