@@ -3,6 +3,9 @@ import styles from "./Register.module.scss";
 import { uid } from "uid";
 import { useForm, SubmitHandler} from "react-hook-form";
 import Button from "@components/ui/Button/Button";
+import { FC } from "react";
+import classNames from "classnames";
+import { inputPropsList } from "./constants";
 
 
 export interface FormInputVal {
@@ -12,45 +15,11 @@ export interface FormInputVal {
   password: string,
 }
 
-// export type InputProps = {
-//   register: UseFormRegister<FormInputVal>;
-//   required: boolean;
-// };
-
-
-const inputPropsList = [
-  {
-    type: "text",
-    label: "First Name",
-    name: "firstName",
-    pattern: "[A-z]+",
-    size: 'default'
-  },
-  {
-    type: "text",
-    label: "Last Name",
-    name: "lastName",
-    pattern: "[A-z]+",
-    size: 'default'
-  },
-  {
-    type: "text",
-    label: "E-mail",
-    name: "email",
-    pattern: "[A-z,0-9]+@[a-z]+.[a-z]+",
-    size: 'default'
-  },
-  {
-    type: "text",
-    label: "Password",
-    name: "password",
-    pattern: "(?=.*[a-z])(?=.*[A-Z]).{8}",
-    size: 'default'
-  },
-];
-
-
-const Register = () => {
+interface props  {
+  openOrClosed: boolean,
+  close:() => void
+}
+const Register:FC<props> = ({openOrClosed, close}) => {
   const {
     register,
     handleSubmit,
@@ -66,10 +35,13 @@ const Register = () => {
   });
   console.log(typeof register);
   
-  const onSubmit: SubmitHandler<FormInputVal> = data => console.log(data);
+  const onSubmit: SubmitHandler<FormInputVal> = data => {
+    close()
+    console.log(data)
+  };
   
   return (
-    <div className={styles.register}>
+    <div className={classNames(openOrClosed ? styles.register : styles.registerClose)}>
       <form
         className={styles.register__form}
         onSubmit={handleSubmit(onSubmit)}

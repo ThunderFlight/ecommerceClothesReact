@@ -3,7 +3,12 @@
 .register {
     @include flex-col(center, center);
 
+    display: block;
     width: 300px;
     padding: 35px;
     background-color: $white;
+}
+
+.registerClose {
+    display: none;
 }

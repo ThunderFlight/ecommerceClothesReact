@@ -38,6 +38,8 @@
       "@store": ["store"],
       "@store/*": ["store/*"],
       
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"],
     }
   },
   "include": ["src"],

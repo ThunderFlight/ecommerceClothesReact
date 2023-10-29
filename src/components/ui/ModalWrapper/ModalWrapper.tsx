@@ -1,12 +1,17 @@
+import { FC } from 'react'
 import styles from './ModalWrapper.module.scss'
+import classNames from 'classnames'
 
-type props = {
-    children: JSX.Element
+interface props  {
+    children: JSX.Element,
+    openOrClosed: boolean,
+    close:() => void
 }
 
-const ModalWrapper = ({children}:props) => {
+const ModalWrapper:FC<props> = ({children, openOrClosed}) => {
+ 
     return (
-        <div className={styles.modalWrapper}>
+        <div className={classNames(openOrClosed ? styles.modalWrapper : styles.modalWrapperClosed)}>
             {children}
         </div>
     )

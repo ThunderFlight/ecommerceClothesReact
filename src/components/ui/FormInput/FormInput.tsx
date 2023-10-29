@@ -1,20 +1,22 @@
 import classNames from 'classnames';
 import styles from './FormInput.module.scss';
 import { FC } from "react";
+import { UseFormRegister, Path, ValidationRule } from 'react-hook-form';
+import { FormInputVal } from '../modals/Register/Register';
 
 
-interface prop  {
+
+interface Prop  {
     size:string
     key:string,
     label:string,
-    pattern:string,
-    name:string,
-    register:object;
+    pattern:ValidationRule<RegExp>,
+    name: Path<FormInputVal>,
+    register: UseFormRegister<FormInputVal>;
 }
 
 
-
-const FormInput:FC<prop> = ({size, key ,label, pattern, name, register}) => {
+const FormInput:FC<Prop> = ({size, key ,label, pattern, name, register}) => {
     console.log(typeof register);
     
     return (
