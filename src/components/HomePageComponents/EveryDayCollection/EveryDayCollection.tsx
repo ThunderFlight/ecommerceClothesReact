@@ -14,7 +14,7 @@ const EveryDayCollection = () => {
           <h1 className={styles.description__collection}>
             The base collection - Ideal <br /> every day.
           </h1>
-          <Button children="Shop Now" size="default" />
+          <Button name="Shop Now" size="default" />
         </div>
       </div>
       <img

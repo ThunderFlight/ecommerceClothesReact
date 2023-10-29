@@ -5,13 +5,13 @@ import classNames from 'classnames';
 type sizeStyle = 'small' | 'default' |'large'
 
 interface props {
-    children: string,
+    name: string,
     size: sizeStyle,
 }
 
-const Button:FC<props> = ({children = '', size = 'default'}) => {
+const Button:FC<props> = ({name = '', size = 'default'}) => {
     return (
-        <button className = {classNames(styles[size], styles.button)}>{children}</button>
+        <button className = {classNames(styles[size], styles.button)}>{name}</button>
     )
 }
 

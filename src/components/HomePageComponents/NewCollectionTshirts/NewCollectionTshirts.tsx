@@ -13,7 +13,7 @@ const NewCollectionTshirts = () => {
                 <p className={styles.title}>NEW COLLECTION</p>
                 <h1 className={styles.firstTagline}>Be different in your own way!</h1>
                 <h2 className={styles.secondTagline}>Find your unique style.</h2>
-                <Button children='Shop Collection' size='default'/>
+                <Button name='Shop Collection' size='default'/>
             </div>
         </section>
     )

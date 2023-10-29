@@ -1,0 +1,9 @@
+@import '@styles/main.scss';
+
+.register {
+    @include flex-col(center, center);
+
+    width: 300px;
+    padding: 35px;
+    background-color: $white;
+}

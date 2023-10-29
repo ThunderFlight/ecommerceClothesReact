@@ -59,7 +59,7 @@ const ContactForm = () => {
             placeholder="Message..."
             className={styles.textForm}
           ></textarea>
-          <Button size="default" children="Send" />
+          <Button size="default" name="Send" />
         </form>
       </div>
     </section>

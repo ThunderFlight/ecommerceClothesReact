@@ -22,7 +22,7 @@ const Footer = () => {
               className={styles.input}
               placeholder="Your email address..."
             />
-            <Button children="Subcribe" size="default" />
+            <Button name="Subcribe" size="default" />
           </form>
           <ul className={styles.navigation}>
             <li>But T-Shirts</li>

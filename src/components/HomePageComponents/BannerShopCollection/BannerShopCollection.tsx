@@ -11,7 +11,7 @@ const BannerShopCollection = () => {
           Slick. Modern.
           <br /> Awesome.
         </h1>
-        <Button children='Shop Collection' size="default"/>
+        <Button name='Shop Collection' size="default"/>
       </div>
       <div className={styles.bannerShopCollection__wrapperBannerImage}>
         <img

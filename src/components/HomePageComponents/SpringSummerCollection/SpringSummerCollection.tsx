@@ -21,7 +21,7 @@ const SpringSummerCollection = () => {
               tempor, congue justo at, lobortis orci. Aliquam venenatis dui
               lectus, eu convallis turpis convallis et. Pellentesque.
             </p>
-            <Button children="See Whole Collection" size="default" />
+            <Button name="See Whole Collection" size="default" />
           </div>
         </div>
       </div>
