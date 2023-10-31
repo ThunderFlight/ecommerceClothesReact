@@ -1,29 +1,26 @@
 import classNames from 'classnames';
 import styles from './FormInput.module.scss';
-import { FC } from "react";
-import { UseFormRegister, Path, ValidationRule } from 'react-hook-form';
-import { FormInputVal } from '../modals/Register/Register';
+import { UseFormRegister, Path, ValidationRule, FieldValues } from 'react-hook-form';
 
 
 
-interface Prop  {
+interface FormInputProps<Type extends FieldValues>{
     size:string
     key:string,
     label:string,
     pattern:ValidationRule<RegExp>,
-    name: Path<FormInputVal>,
-    register: UseFormRegister<FormInputVal>;
+    name: Path<Type>,
+    register: UseFormRegister<Type>;
 }
 
 
-const FormInput:FC<Prop> = ({size, key ,label, pattern, name, register}) => {
-    console.log(typeof register);
+const FormInput = <Type extends FieldValues>({size, key ,label, pattern, name, register}:FormInputProps<Type>) => {
     
     return (
-        <>
+        <div key={key}>
             <label htmlFor={name} className={styles.label}>{label}</label>
-            <input className={classNames(styles[size], styles.input)}  key={key} {...register(name, {pattern: pattern, required: true})}/>
-        </>
+            <input autoComplete='on' className={classNames(styles[size], styles.input)}  key={key} {...register(name, {pattern: pattern, required: true})}/>
+        </div>
     )
 }
 

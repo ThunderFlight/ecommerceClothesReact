@@ -6,9 +6,11 @@ import Button from "@components/ui/Button/Button";
 import { FC } from "react";
 import classNames from "classnames";
 import { inputPropsList } from "./constants";
+import { registration } from "../../../../store/counter/usersSlice";
+import { useAppDispatch } from "../../../../hooks/redux";
 
 
-export interface FormInputVal {
+export interface RegisterInputFields {
   firstName:string,
   lastName: string,
   email: string,
@@ -24,7 +26,7 @@ const Register:FC<props> = ({openOrClosed, close}) => {
     register,
     handleSubmit,
     // formState: { errors },
-  } = useForm<FormInputVal>({
+  } = useForm<RegisterInputFields>({
     defaultValues: {
       firstName: "",
       lastName: "",
@@ -33,11 +35,12 @@ const Register:FC<props> = ({openOrClosed, close}) => {
       // userId: uid()
     }
   });
-  console.log(typeof register);
   
-  const onSubmit: SubmitHandler<FormInputVal> = data => {
+  const dispatch = useAppDispatch();
+
+  const onSubmit: SubmitHandler<RegisterInputFields> = data => {
     close()
-    console.log(data)
+    dispatch({type:registration, payload:data})
   };
   
   return (
