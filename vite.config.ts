@@ -8,23 +8,23 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: "@components",
+        find: "@/components",
         replacement: path.resolve(__dirname, "src/components"),
       },
       {
-        find: "@pages",
+        find: "@/pages",
         replacement: path.resolve(__dirname, "src/pages"),
       },
       {
-        find: "@assets",
+        find: "@/assets",
         replacement: path.resolve(__dirname, "src/assets"),
       },
       {
-        find: "@styles",
+        find: "@/styles",
         replacement: path.resolve(__dirname, "src/styles"),
       },
       {
-        find: "@styles",
+        find: "@/styles",
         replacement: path.resolve(__dirname, "src/styles"),
       },
     ],
@@ -34,7 +34,7 @@ export default defineConfig({
       scss: {
         includePaths: ['./src/styles/main.scss'],
         additionalData: `
-        @import '@styles/main.scss';
+        @import '@/styles/main.scss';
         `,
       }
     }

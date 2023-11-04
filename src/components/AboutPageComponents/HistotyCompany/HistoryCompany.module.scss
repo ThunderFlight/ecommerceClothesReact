@@ -1,4 +1,4 @@
-@import '@styles/main.scss';
+@import '@/styles/main.scss';
 
 .historyCompany {
     @include flex-col(center, center);
@@ -58,7 +58,7 @@
             height: 100%;
             margin: 0px;
 
-            background-image: url(@assets/HistoryCompanyBackground.jpg);
+            background-image: url(@/assets/HistoryCompanyBackground.jpg);
             background-position: center;
         }
     }

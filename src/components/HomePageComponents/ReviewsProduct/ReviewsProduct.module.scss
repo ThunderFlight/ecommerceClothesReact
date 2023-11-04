@@ -1,4 +1,4 @@
-@import "@styles/main.scss";
+@import "@/styles/main.scss";
 
 .reviewsProduct {
   @include flex(center, center);
@@ -32,7 +32,7 @@
       &__rating {
         @include flex-row(center);
 
-        list-style-image: url("@assets/star.png");
+        list-style-image: url("@/assets/star.png");
 
         .star {
           margin-left: 25px;

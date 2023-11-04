@@ -1,8 +1,9 @@
-import Title from "@/components/GenderShoppingPageComponents/Title/Title";
-import { ProductPreView } from "@/components/ui/productPreView/ProductPreView";
+
 import { FC } from "react";
 import { useGetClothesQuery } from "../store/services/clothes/clothesApi";
 import Loader from "@/components/ui/Loader/Loader";
+import Title from "@/components/GenderShoppingPageComponents/Title/Title";
+import { ProductPreView } from "@/components/ui/productPreView/ProductPreView";
 
 interface GenderShoppingProps {
   title: string;

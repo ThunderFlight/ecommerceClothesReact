@@ -5,20 +5,19 @@ import { UseFormRegister, Path, ValidationRule, FieldValues } from 'react-hook-f
 
 
 interface FormInputProps<Type extends FieldValues>{
-    size:string
-    key:string,
+    size:string,
     label:string,
     pattern:ValidationRule<RegExp>,
     name: Path<Type>,
     register: UseFormRegister<Type>;
 }
 
-const FormInput = <Type extends FieldValues>({size, key ,label, pattern, name, register}:FormInputProps<Type>) => {
+const FormInput = <Type extends FieldValues>({size ,label, pattern, name, register}:FormInputProps<Type>) => {
     
     return (
-        <div key={key}>
+        <div>
             <label htmlFor={name} className={styles.label}>{label}</label>
-            <input autoComplete='on' className={classNames(styles[size], styles.input)}  key={key} {...register(name, {pattern: pattern, required: true})}/>
+            <input autoComplete='on' className={classNames(styles[size], styles.input)} {...register(name, {pattern: pattern, required: true})}/>
         </div>
     )
 }

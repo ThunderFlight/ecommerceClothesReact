@@ -1,4 +1,4 @@
-@import '@styles/main.scss';
+@import '@/styles/main.scss';
 
 .label {
     @include text(16px, 400, $black);

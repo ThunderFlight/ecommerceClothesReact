@@ -1,12 +1,12 @@
 import { Path, ValidationRule } from "react-hook-form";
-import { FormInputVal } from "./Register";
+import { RegisterInputFields } from "./Register";
 
 
 interface AuthInput {
     type: string,
     label: string,
     pattern:ValidationRule<RegExp>,
-    name: Path<FormInputVal>,
+    name: Path<RegisterInputFields>,
     size: string
 }
 
@@ -29,7 +29,7 @@ export const inputPropsList:AuthInput[] = [
       type: "text",
       label: "E-mail",
       name: "email",
-      pattern: /[A-z,0-9]+@/[a-z]+.[a-z]+/gi,
+      pattern: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/gi,
       size: 'default'
     },
     {

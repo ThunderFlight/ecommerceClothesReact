@@ -1,6 +1,6 @@
+import Button from "@/components/ui/Button/Button";
 import styles from "./BannerShopCollection.module.scss";
 import woman from "@/assets/hero.png";
-import Button from "@/components/ui/Button/Button";
 
 const BannerShopCollection = () => {
   return (
