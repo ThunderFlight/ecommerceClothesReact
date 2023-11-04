@@ -1,5 +1,5 @@
 import styles from './ContactTitle.module.scss'
-import UnderLine from "@components/ui/UnderLine/UnderLine";
+import UnderLine from "@/components/ui/UnderLine/UnderLine";
 
 const ContactTitle = () => {
   return (

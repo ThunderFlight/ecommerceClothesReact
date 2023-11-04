@@ -17,29 +17,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-   
-    "baseUrl": "./src/",
+    "types": ["node"],
     "paths": {
-      "@pages": ["pages"],
-      "@pages/*": ["pages/*"],
-      
-      "@services": ["services"],
-      "@services/*": ["services/*"],
-      
-      "@assets": ["assets"],
-      "@assets/*": ["assets/*"],
-
-      "@styles": ["styles"],
-      "@styles/*": ["styles/*"],
-
-      "@components": ["components"],
-      "@components/*": ["components/*"],
-
-      "@store": ["store"],
-      "@store/*": ["store/*"],
-      
-      "@hooks": ["hooks"],
-      "@hooks/*": ["hooks/*"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src"],

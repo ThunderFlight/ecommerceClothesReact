@@ -1,6 +1,6 @@
 import styles from "./MenOrWomenCategory.module.scss";
-import men from "@assets/men.webp";
-import women from "@assets/women.webp";
+import men from "@/assets/men.webp";
+import women from "@/assets/women.webp";
 
 const MenOrWomenCategory = () => {
   return (

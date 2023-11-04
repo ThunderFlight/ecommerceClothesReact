@@ -13,7 +13,6 @@ interface FormInputProps<Type extends FieldValues>{
     register: UseFormRegister<Type>;
 }
 
-
 const FormInput = <Type extends FieldValues>({size, key ,label, pattern, name, register}:FormInputProps<Type>) => {
     
     return (

@@ -1,4 +1,4 @@
-import UnderLine from "@components/ui/UnderLine/UnderLine";
+import UnderLine from "@/components/ui/UnderLine/UnderLine";
 import styles from "./HistoryCompany.module.scss";
 
 const HistoryCompany = () => {

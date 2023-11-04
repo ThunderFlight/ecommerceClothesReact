@@ -1,4 +1,4 @@
-import Button from '@components/ui/Button/Button';
+import Button from '@/components/ui/Button/Button';
 import styles from './NewCollectionTshirts.module.scss'
 
 const NewCollectionTshirts = () => {

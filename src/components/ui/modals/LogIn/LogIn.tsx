@@ -1,12 +1,12 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./LogIn.module.scss";
 import { FC } from "react";
-import FormInput from "@components/ui/FormInput/FormInput";
+import FormInput from "@/components/ui/FormInput/FormInput";
 import { uid } from "uid";
 import classNames from "classnames";
-import Button from "@components/ui/Button/Button";
-import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
-import { logInCheckData } from "../../../../store/counter/usersSlice";
+import Button from "@/components/ui/Button/Button";
+import { useAppDispatch } from "../../../../hooks/redux";
+import { logInCheckData } from "../../../../store/slice/usersSlice";
 
 export interface LogInInputFields {
     email:string;
@@ -16,10 +16,14 @@ export interface LogInInputFields {
 interface props {
     openOrClosed:boolean,
     close:() => void,
+    autorizeTrue:() => void,
+    autorizeFalse:() => void,
 }
 
+const emailRegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+const passwordRegExp = /(?=.*[a-z])(?=.*[A-Z]).{8}/gi
 
-const LogIn:FC<props> = ({openOrClosed, close}) => {
+const LogIn:FC<props> = ({openOrClosed, close, autorizeTrue, autorizeFalse}) => {
     const {
       register,
       handleSubmit,
@@ -31,13 +35,17 @@ const LogIn:FC<props> = ({openOrClosed, close}) => {
       }
     });
     
+
     const dispatch = useAppDispatch();
-    const data = useAppSelector((state) => state)
+    // const data = useAppSelector((state) => state)
 
     const onSubmit: SubmitHandler<LogInInputFields> = data => {
       close();
       dispatch({type:logInCheckData, payload:data})
-    
+      JSON.parse(localStorage.getItem('user') || '{}').map((item:LogInInputFields) => {
+        return item.password === data.password ? autorizeTrue() : autorizeFalse()
+      })
+      
     };
       
   return (
@@ -46,7 +54,7 @@ const LogIn:FC<props> = ({openOrClosed, close}) => {
             <FormInput
               key={uid()}
               label='Email'
-              pattern={/[A-z,0-9]+@[a-z]+.[a-z]+/gi}
+              pattern={emailRegExp}
               name='email'
               register={register}
               size='default'
@@ -54,7 +62,7 @@ const LogIn:FC<props> = ({openOrClosed, close}) => {
             <FormInput
               key={uid()}
               label='Password'
-              pattern={/(?=.*[a-z])(?=.*[A-Z]).{8}/gi}
+              pattern={passwordRegExp}
               name='password'
               register={register}
               size='default'

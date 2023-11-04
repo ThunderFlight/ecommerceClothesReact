@@ -1,7 +1,7 @@
 import styles from "./EveryDayCollection.module.scss";
-import collection01 from "@assets/collection-01.jpg";
-import collection02 from "@assets/collection-02.jpg";
-import Button from "@components/ui/Button/Button";
+import collection01 from "@/assets/collection-01.jpg";
+import collection02 from "@/assets/collection-02.jpg";
+import Button from "@/components/ui/Button/Button";
 
 
 const EveryDayCollection = () => {

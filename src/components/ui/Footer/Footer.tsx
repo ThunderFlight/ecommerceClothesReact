@@ -1,7 +1,7 @@
 import styles from "./Footer.module.scss";
-import facebook from "@assets/icons8-facebook.svg";
-import instagram from "@assets/icons8-instagram.svg";
-import twitter from "@assets/icons8-twitter(1).svg";
+import facebook from "@/assets/icons8-facebook.svg";
+import instagram from "@/assets/icons8-instagram.svg";
+import twitter from "@/assets/icons8-twitter(1).svg";
 import Button from "../Button/Button";
 
 const Footer = () => {

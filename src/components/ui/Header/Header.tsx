@@ -1,6 +1,6 @@
 import styles from "./Header.module.scss";
-import basket from "@assets/basket.png";
-import magnifyingGlass from "@assets/magnifyingGlass.png";
+import basket from "@/assets/basket.png";
+import magnifyingGlass from "@/assets/magnifyingGlass.png";
 import Navigation from "../Navigation/Navigation";
 import ModalWrapper from "../ModalWrapper/ModalWrapper";
 import Register from "../modals/Register/Register";
@@ -9,6 +9,11 @@ import LogIn from "../modals/LogIn/LogIn";
 const Header = () => {
   const {value: registerValue,setTrue: setRegisterTrue,setFalse: setRegisterFalse} = useBoolean()
   const {value: logInValue,setTrue: setLogInTrue,setFalse: setLogInFalse} = useBoolean()
+  const {value:userAutorize, setTrue:setAutorizeTrue, setFalse:setAutorizeFalse} = useBoolean()
+  
+  console.log(userAutorize);
+  
+
   return (
     <div className={styles.wrapper}>
       <Navigation styleText="list" />
@@ -30,16 +35,25 @@ const Header = () => {
           </button>
         </div>
         <div>
-          <button className={styles.logInButton} onClick={setLogInTrue}>LOG IN</button>
-          <span> | </span>
-          <button className={styles.logInButton} onClick={setRegisterTrue}>REGISTER</button>
+            {
+            userAutorize ?
+            <span>Autorized</span>
+            :
+            (
+            <>
+            <button className={styles.logInButton} onClick={setLogInTrue}>LOG IN</button>
+            <span> | </span>
+            <button className={styles.logInButton} onClick={setRegisterTrue}>REGISTER</button>
+            </>
+            ) 
+            }
         </div>
       </div>
       <ModalWrapper close={setRegisterFalse} openOrClosed={registerValue}>
         <Register close={setRegisterFalse} openOrClosed={registerValue}/>
       </ModalWrapper>
       <ModalWrapper close={setLogInFalse} openOrClosed={logInValue}>
-        <LogIn close={setLogInFalse} openOrClosed={logInValue}/>
+        <LogIn close={setLogInFalse} openOrClosed={logInValue} autorizeTrue={setAutorizeTrue} autorizeFalse={setAutorizeFalse} />
       </ModalWrapper>
     </div>
   );

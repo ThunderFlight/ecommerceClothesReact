@@ -1,12 +1,12 @@
-import FormInput from "@components/ui/FormInput/FormInput";
+import FormInput from "@/components/ui/FormInput/FormInput";
 import styles from "./Register.module.scss";
 import { uid } from "uid";
 import { useForm, SubmitHandler} from "react-hook-form";
-import Button from "@components/ui/Button/Button";
-import { FC } from "react";
+import Button from "@/components/ui/Button/Button";
+import { FC, useEffect } from "react";
 import classNames from "classnames";
 import { inputPropsList } from "./constants";
-import { registration } from "../../../../store/counter/usersSlice";
+import { registration } from "../../../../store/slice/usersSlice";
 import { useAppDispatch } from "../../../../hooks/redux";
 
 
@@ -43,6 +43,9 @@ const Register:FC<props> = ({openOrClosed, close}) => {
     dispatch({type:registration, payload:data})
   };
   
+  useEffect(() => {
+    JSON.parse(localStorage.getItem('user') || '{}').length === 0 && dispatch({type:registration, payload:JSON.parse(localStorage.getItem('user') || '{}')})
+  })
   return (
     <div className={classNames(openOrClosed ? styles.register : styles.registerClose)}>
       <form

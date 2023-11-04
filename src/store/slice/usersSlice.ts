@@ -4,7 +4,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 // }
 
-interface Test {
+export interface Test {
   email: string,
   password: string
 }

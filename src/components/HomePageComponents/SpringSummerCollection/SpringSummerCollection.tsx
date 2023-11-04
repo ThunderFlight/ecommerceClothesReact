@@ -1,6 +1,6 @@
-import Button from "@components/ui/Button/Button";
+import Button from "@/components/ui/Button/Button";
 import styles from "./SpringSummerCollection.module.scss";
-import summerSpringCollectionImage from "@assets/springSummerCollection.jpg";
+import summerSpringCollectionImage from "@/assets/springSummerCollection.jpg";
 
 const SpringSummerCollection = () => {
   return (

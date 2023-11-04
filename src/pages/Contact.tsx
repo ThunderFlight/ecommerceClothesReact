@@ -1,6 +1,6 @@
-import ContactForm from "@components/ContactPageComponents/ContactForm/ContactForm";
-import Map from "@components/ContactPageComponents/Map/Map";
-import ContactTitle from "@components/ContactPageComponents/Title/ContactTitle";
+import ContactForm from "@/components/ContactPageComponents/ContactForm/ContactForm";
+import Map from "@/components/ContactPageComponents/Map/Map";
+import ContactTitle from "@/components/ContactPageComponents/Title/ContactTitle";
 
 const Contact = () => {
     return (

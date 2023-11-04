@@ -23,6 +23,10 @@ export default defineConfig({
         find: "@styles",
         replacement: path.resolve(__dirname, "src/styles"),
       },
+      {
+        find: "@styles",
+        replacement: path.resolve(__dirname, "src/styles"),
+      },
     ],
   },
   css: {

@@ -1,25 +1,21 @@
 import { FC } from "react";
 import styles from "./ProductPreView.module.scss";
-import itemProduct from "@assets/itemProductPreView.jpg";
+import { ProductPreViewProps } from "globalTypes/globalTypes";
 
-interface props {
-  sizeImage: string;
-}
-
-export const ProductPreView:FC<props> = ({sizeImage}) => {
+export const ProductPreView:FC<ProductPreViewProps> = ({sizeImage, name, price, gender, image}) => {
   return (
     <div className={styles.productPreView}>
       <img
         className={styles[sizeImage]}
-        src={itemProduct}
+        src={image}
         alt="item product"
       />
       <div className={styles.productPreView__descriptionProduct}>
-        <p className={styles.descriptionProduct__sexProduct}>MEN</p>
+        <p className={styles.descriptionProduct__sexProduct}>MEN{gender}</p>
         <h2 className={styles.descriptionProduct__nameProduct}>
-          T-Shirt Name 10
+          {name}
         </h2>
-        <p className={styles.descriptionProduct__priceProduct}>12$</p>
+        <p className={styles.descriptionProduct__priceProduct}>{price}$</p>
       </div>
     </div>
   );

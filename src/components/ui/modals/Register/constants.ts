@@ -29,7 +29,7 @@ export const inputPropsList:AuthInput[] = [
       type: "text",
       label: "E-mail",
       name: "email",
-      pattern: /[A-z,0-9]+@[a-z]+.[a-z]+/gi,
+      pattern: /[A-z,0-9]+@/[a-z]+.[a-z]+/gi,
       size: 'default'
     },
     {

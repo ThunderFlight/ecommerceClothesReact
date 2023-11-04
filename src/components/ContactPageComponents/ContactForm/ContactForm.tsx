@@ -1,8 +1,8 @@
 import styles from "./ContactForm.module.scss";
-import email from "@assets/icons8-email-15.png";
-import phone from "@assets/icons8-phone-15.png";
-import addres from "@assets/icons8-address-15.png";
-import Button from "@components/ui/Button/Button";
+import email from "@/assets/icons8-email-15.png";
+import phone from "@/assets/icons8-phone-15.png";
+import addres from "@/assets/icons8-address-15.png";
+import Button from "@/components/ui/Button/Button";
 import classNames from "classnames";
 
 const ContactForm = () => {
@@ -23,7 +23,7 @@ const ContactForm = () => {
             </li>
             <li className={styles.elements}>
               <img src={email} />
-              <span>contact@info.com</span>
+              <span>contact@/info.com</span>
             </li>
             <li className={classNames(styles.elements, styles.phone)}>
               <img src={phone} />
