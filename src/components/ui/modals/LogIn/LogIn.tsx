@@ -13,7 +13,7 @@ export interface LogInInputFields {
     password:string;
 }
 
-interface props {
+interface LogInProps {
     openOrClosed:boolean,
     close:() => void,
     autorizeTrue:() => void,
@@ -23,7 +23,7 @@ interface props {
 const emailRegExp = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/gi
 const passwordRegExp = /(?=.*[a-z])(?=.*[A-Z]).{8}/gi
 
-const LogIn:FC<props> = ({openOrClosed, close, autorizeTrue, autorizeFalse}) => {
+const LogIn:FC<LogInProps> = ({openOrClosed, close, autorizeTrue, autorizeFalse}) => {
     const {
       register,
       handleSubmit,

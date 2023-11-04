@@ -1,6 +1,7 @@
 @import '@/styles/main.scss';
 
 .productPreView {
+    display: inline-block;
     margin-right: 20px;
     &__imageProduct {
             width: 300px;
@@ -16,6 +17,7 @@
         &__nameProduct {
             @include text(20px, 600, $black);
 
+            max-width: 420px;
             font-family: 'Poppins', sans-serif;
         }
         &__priceProduct {

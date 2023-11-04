@@ -5,7 +5,7 @@ import { useForm, SubmitHandler} from "react-hook-form";
 import Button from "@/components/ui/Button/Button";
 import { FC, useEffect } from "react";
 import classNames from "classnames";
-import { inputPropsList } from "./constants";
+import { InputPropsList } from "./constants";
 import { registration } from "../../../../store/slice/usersSlice";
 import { useAppDispatch } from "../../../../hooks/redux";
 
@@ -17,11 +17,11 @@ export interface RegisterInputFields {
   password: string,
 }
 
-interface props  {
+interface RegisterProps  {
   openOrClosed: boolean,
   close:() => void
 }
-const Register:FC<props> = ({openOrClosed, close}) => {
+const Register:FC<RegisterProps> = ({openOrClosed, close}) => {
   const {
     register,
     handleSubmit,
@@ -52,7 +52,7 @@ const Register:FC<props> = ({openOrClosed, close}) => {
         className={styles.register__form}
         onSubmit={handleSubmit(onSubmit)}
       >
-        {inputPropsList.map((item) => {
+        {InputPropsList.map((item) => {
           return (
             <FormInput
               key={uid()}

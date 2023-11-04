@@ -4,12 +4,12 @@ import classNames from 'classnames';
 
 type sizeStyle = 'small' | 'default' |'large'
 
-interface props {
+interface ButtonProps {
     name: string,
     size: sizeStyle,
 }
 
-const Button:FC<props> = ({name = '', size = 'default'}) => {
+const Button:FC<ButtonProps> = ({name = '', size = 'default'}) => {
     return (
         <button className = {classNames(styles[size], styles.button)}>{name}</button>
     )

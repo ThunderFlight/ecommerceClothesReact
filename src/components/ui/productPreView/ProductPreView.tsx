@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./ProductPreView.module.scss";
-import { ProductPreViewProps } from "globalTypes/globalTypes";
+import { ProductPreViewProps } from "@/globalTypes/globalTypes";
 
 export const ProductPreView:FC<ProductPreViewProps> = ({sizeImage, name, price, gender, image}) => {
   return (
@@ -11,7 +11,7 @@ export const ProductPreView:FC<ProductPreViewProps> = ({sizeImage, name, price, 
         alt="item product"
       />
       <div className={styles.productPreView__descriptionProduct}>
-        <p className={styles.descriptionProduct__sexProduct}>MEN{gender}</p>
+        <p className={styles.descriptionProduct__sexProduct}>{gender.toUpperCase()}</p>
         <h2 className={styles.descriptionProduct__nameProduct}>
           {name}
         </h2>

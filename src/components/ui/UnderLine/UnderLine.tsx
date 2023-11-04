@@ -2,11 +2,11 @@ import classNames from 'classnames';
 import styles from './UnderLine.module.scss'
 import { FC } from 'react';
 
-interface props {
+interface UnderLineProps {
     color: string;
 }
 
-const UnderLine:FC<props> = ({color}) => {
+const UnderLine:FC<UnderLineProps> = ({color}) => {
     return <span className={classNames(styles.underLine, styles[color])}></span>
 }
 

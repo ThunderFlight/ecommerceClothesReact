@@ -13,9 +13,9 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
-        <Route path="/shop" element={<GenderShopping title="Shop"/>} />
-        <Route path="/womenCategory" element={<GenderShopping title="Women"/>} />
-        <Route path="/menCategory" element={<GenderShopping title="Men"/>} />
+        <Route path="/shop" element={<GenderShopping title="Shop" filterCategory=""/>} />
+        <Route path="/womenCategory" element={<GenderShopping title="Women" filterCategory="wom"/>} />
+        <Route path="/menCategory" element={<GenderShopping title="Men" filterCategory="men"/>}/>
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
       </Routes>

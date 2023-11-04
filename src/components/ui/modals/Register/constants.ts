@@ -10,7 +10,7 @@ interface AuthInput {
     size: string
 }
 
-export const inputPropsList:AuthInput[] = [
+export const InputPropsList:AuthInput[] = [
     {
       type: "text",
       label: "First Name",
