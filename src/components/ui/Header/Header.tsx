@@ -1,18 +1,25 @@
-import styles from "./Header.module.scss";
-import basket from "@/assets/basket.png";
-import magnifyingGlass from "@/assets/magnifyingGlass.png";
-import Navigation from "../Navigation/Navigation";
-import ModalWrapper from "../ModalWrapper/ModalWrapper";
-import Register from "../modals/Register/Register";
-import { useBoolean } from "../../../hooks/useBoolean"
-import LogIn from "../modals/LogIn/LogIn";
+import styles from './Header.module.scss';
+import basket from '@/assets/basket.png';
+import magnifyingGlass from '@/assets/magnifyingGlass.png';
+import Navigation from '../Navigation/Navigation';
+import Register from '../Modals/Register/Register';
+import { useBoolean } from '../../../hooks/useBoolean';
+import LogIn from '../Modals/LogIn/LogIn';
+import DefaultModal from '../Modals/DefaultModal/DefaultModal';
 const Header = () => {
-  const {value: registerValue,setTrue: setRegisterTrue,setFalse: setRegisterFalse} = useBoolean()
-  const {value: logInValue,setTrue: setLogInTrue,setFalse: setLogInFalse} = useBoolean()
-  const {value:userAutorize, setTrue:setAutorizeTrue, setFalse:setAutorizeFalse} = useBoolean()
-  
-  console.log(userAutorize);
-  
+  const {
+    value: registerValue,
+    setTrue: setRegisterTrue,
+    setFalse: setRegisterFalse,
+  } = useBoolean();
+  const { value: logInValue, setTrue: setLogInTrue, setFalse: setLogInFalse } = useBoolean();
+  const {
+    value: userAutorize,
+    setTrue: setAutorizeTrue,
+    setFalse: setAutorizeFalse,
+  } = useBoolean();
+
+  console.log(logInValue);
 
   return (
     <div className={styles.wrapper}>
@@ -35,26 +42,31 @@ const Header = () => {
           </button>
         </div>
         <div>
-            {
-            userAutorize ?
+          {userAutorize ? (
             <span>Autorized</span>
-            :
-            (
+          ) : (
             <>
-            <button className={styles.logInButton} onClick={setLogInTrue}>LOG IN</button>
-            <span> | </span>
-            <button className={styles.logInButton} onClick={setRegisterTrue}>REGISTER</button>
+              <button className={styles.logInButton} onClick={setLogInTrue}>
+                LOG IN
+              </button>
+              <span> | </span>
+              <button className={styles.logInButton} onClick={setRegisterTrue}>
+                REGISTER
+              </button>
             </>
-            ) 
-            }
+          )}
         </div>
       </div>
-      <ModalWrapper close={setRegisterFalse} openOrClosed={registerValue}>
-        <Register close={setRegisterFalse} openOrClosed={registerValue}/>
-      </ModalWrapper>
-      <ModalWrapper close={setLogInFalse} openOrClosed={logInValue}>
-        <LogIn close={setLogInFalse} openOrClosed={logInValue} autorizeTrue={setAutorizeTrue} autorizeFalse={setAutorizeFalse} />
-      </ModalWrapper>
+      <DefaultModal closeOrOpen={registerValue} close={setRegisterFalse}>
+        <Register close={setRegisterFalse}/>
+      </DefaultModal>
+      <DefaultModal closeOrOpen={logInValue} close={setLogInFalse}>
+        <LogIn
+          close={setLogInFalse}
+          autorizeTrue={setAutorizeTrue}
+          autorizeFalse={setAutorizeFalse}
+        />
+      </DefaultModal>
     </div>
   );
 };

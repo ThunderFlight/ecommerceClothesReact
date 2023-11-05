@@ -4,7 +4,6 @@ import { uid } from "uid";
 import { useForm, SubmitHandler} from "react-hook-form";
 import Button from "@/components/ui/Button/Button";
 import { FC, useEffect } from "react";
-import classNames from "classnames";
 import { InputPropsList } from "./constants";
 import { registration } from "../../../../store/slice/usersSlice";
 import { useAppDispatch } from "../../../../hooks/redux";
@@ -18,10 +17,9 @@ export interface RegisterInputFields {
 }
 
 interface RegisterProps  {
-  openOrClosed: boolean,
   close:() => void
 }
-const Register:FC<RegisterProps> = ({openOrClosed, close}) => {
+const Register:FC<RegisterProps> = ({close}) => {
   const {
     register,
     handleSubmit,
@@ -47,7 +45,6 @@ const Register:FC<RegisterProps> = ({openOrClosed, close}) => {
     JSON.parse(localStorage.getItem('user') || '{}').length === 0 && dispatch({type:registration, payload:JSON.parse(localStorage.getItem('user') || '{}')})
   })
   return (
-    <div className={classNames(openOrClosed ? styles.register : styles.registerClose)}>
       <form
         className={styles.register__form}
         onSubmit={handleSubmit(onSubmit)}
@@ -66,7 +63,6 @@ const Register:FC<RegisterProps> = ({openOrClosed, close}) => {
         })}
         <Button size="default" name="Register"/>
       </form>
-    </div>
   );
 };
 
