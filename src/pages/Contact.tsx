@@ -4,11 +4,13 @@ import ContactTitle from "@/components/ContactPageComponents/Title/ContactTitle"
 
 const Contact = () => {
     return (
+      <>
         <main>
             <ContactTitle/>
             <ContactForm/>
             <Map/>
         </main>
+      </>
     )
 }
 

@@ -1,18 +1,18 @@
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App.tsx";
-import { Provider } from "react-redux";
-import { store } from "./store/store";
-// import { clothesApi } from "./store/slice/apiSlice.ts";
-// import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+
+import { store } from '@/store/store.ts';
+import App from './App.tsx';
+
+const root = document.getElementById('root');
+
+  if (root === null) {
+    throw Error('Root not found');
+  }
 
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+  ReactDOM.createRoot(root).render(
     <Provider store={store}>
-      {/* <ApiProvider api={clothesApi}> */}
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-      {/* </ApiProvider> */}
-    </Provider>
-);
+      <App/>
+    </Provider>,
+  );

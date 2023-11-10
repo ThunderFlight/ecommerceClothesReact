@@ -1,25 +1,50 @@
-import GenderShopping from "./pages/GenderShopping";
-import { Routes, Route } from "react-router-dom";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
 import styles from './index.module.scss';
-import Footer from "./components/ui/Footer/Footer";
-import Header from "./components/ui/Header/Header";
-import HomePage from "./pages/Home";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import HomePage from '@/pages/Home.tsx';
+import GenderShopping from '@/pages/GenderShopping.tsx';
+import About from '@/pages/About.tsx';
+import Contact from '@/pages/Contact.tsx';
+import RootLayout from '@/components/RootLayout/RootLayout.tsx';
+
+
+const router = createBrowserRouter([
+  {
+    element: <RootLayout />,
+    children: [
+      {
+        path: '/',
+        element: <HomePage />,
+      },
+      {
+        path: '/shop',
+        element: <GenderShopping title='Shop' filterCategory='' />,
+      },
+      {
+        path: '/womenCategory',
+        element: <GenderShopping title='Women' filterCategory='wom' />,
+      },
+      {
+        path: '/menCategory',
+        element: <GenderShopping title='Men' filterCategory='men' />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
+      },
+    ],
+  },
+
+
+]);
 
 function App() {
   return (
     <div className={styles.appWrapper}>
-      <Header/>
-      <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/shop" element={<GenderShopping title="Shop" filterCategory=""/>} />
-        <Route path="/womenCategory" element={<GenderShopping title="Women" filterCategory="wom"/>} />
-        <Route path="/menCategory" element={<GenderShopping title="Men" filterCategory="men"/>}/>
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
-      </Routes>
-      <Footer/>
+      <RouterProvider router={router} />
     </div>
   );
 }

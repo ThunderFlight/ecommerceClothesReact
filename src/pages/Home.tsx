@@ -4,13 +4,13 @@ import MenOrWomenCategory from "@/components/HomePageComponents/MenOrWomenCatego
 import NewCollectionTshirts from "@/components/HomePageComponents/NewCollectionTshirts/NewCollectionTshirts";
 import ReviewsProduct from "@/components/HomePageComponents/ReviewsProduct/ReviewsProduct";
 import SpringSummerCollection from "@/components/HomePageComponents/SpringSummerCollection/SpringSummerCollection";
-// import GalleryProductItems from "@/components/GalleryProductItems/GalleryProductItems";
+// import GalleryProductItems from '@/components/ui/GalleryProductItems/GalleryProductItems.tsx';
 
 const HomePage = () => {
   return (
     <main>
       <BannerShopCollection />
-      {/* <GalleryProductItems title="Popular T-Shirts" sizeImage="default"/> */}
+       {/*<GalleryProductItems title={} gender={} image={} name={}/> */}
       <EveryDayCollection />
       <NewCollectionTshirts />
       <SpringSummerCollection />

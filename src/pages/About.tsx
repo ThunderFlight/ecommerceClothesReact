@@ -4,11 +4,13 @@ import HistoryCompany from "@/components/AboutPageComponents/HistotyCompany/Hist
 
 const About = () => {
     return (
+      <>
         <main>
             <DescriptionCompany/>
             <BannerSlogan/>
             <HistoryCompany/>
         </main>
+      </>
     )
 }
 

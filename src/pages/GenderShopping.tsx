@@ -1,58 +1,48 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useMemo, useState } from 'react';
 import Title from '@/components/GenderShoppingPageComponents/Title/Title';
 import ProductList from '@/components/GenderShoppingPageComponents/ProductList/ProductList';
 import { useGetClothesQuery } from '@/store/services/clothes/clothesApi';
+import { Clothes } from '@/store/types.ts';
 
 interface GenderShoppingProps {
   title: string;
-  filterCategory: string
+  filterCategory: string;
 }
+
+interface TypesFilterSelect {
+  [ket: string]: string;
+}
+
 
 const GenderShopping: FC<GenderShoppingProps> = ({ title, filterCategory }) => {
   const { data: clothList, isLoading } = useGetClothesQuery();
-  const [filterProduct, setFilterProduct] = useState(clothList);
-  useEffect(() => {
-    setFilterProduct(clothList)
+  const [filterList, setFilterList] = useState('Sort by: low to high');
+  const copyClothesList = clothList && Array.from(clothList);
 
-  }, [clothList])
-  const [filterList, setFilterList] = useState('Default sorting');
-  console.log(filterProduct);
-  console.log(clothList);
-  
-  useEffect(() => {
-    console.log(filterList);
-    
-    if (clothList && filterList === 'Default sorting') {
-      setFilterProduct(clothList)
+  const filter = useMemo((): Clothes[] | undefined => {
+    if (copyClothesList === undefined) {
+      return;
     }
 
-    if (clothList && filterList === 'Sort by popularity') {
-      setFilterProduct(clothList?.slice().sort((a, b) => a.rating.count - b.rating.count))
-    }
+    const filterSelect: TypesFilterSelect = {
+      'Default sorting': JSON.stringify(copyClothesList),
+      'Sort by popularity': JSON.stringify(copyClothesList.sort((a, b) => a.rating.count - b.rating.count)),
+      'Sort by average rating': JSON.stringify(copyClothesList.sort((a, b) => b.rating.rate - a.rating.rate)),
+      'Sort by latest': JSON.stringify(copyClothesList.reverse()),
+      'Sort by: low to high': JSON.stringify(copyClothesList.sort((a, b) => a.price - b.price)),
+      'Sort by: high to low': JSON.stringify(copyClothesList.sort((a, b) => b.price - a.price)),
+    };
 
-    if (clothList && filterList === 'Sort by average rating') {
-      setFilterProduct(clothList?.slice().sort((a, b) => a.rating.rate - b.rating.rate))
-    }
+    return JSON.parse(filterSelect[filterList]);
+  }, [copyClothesList, filterList]);
 
-    if (clothList && filterList === 'Sort by latest') {
-      setFilterProduct(clothList?.slice().reverse())
-    }
-
-    if (clothList && filterList === 'Sort by: low to high') {
-      setFilterProduct(clothList?.slice().sort((a, b) => a.price - b.price))
-    }
-
-    if (clothList && filterList === 'Sort by: high to low') {
-      setFilterProduct(clothList?.slice().sort((a, b) => b.price - a.price))
-    }
-    
-  }, [filterList])
-  
   return (
-    <main>
-      <Title title={title} filterList={filterList} setFilterList={setFilterList}/>
-      <ProductList filterCategory={filterCategory} clothList={filterProduct} isLoading={isLoading}/>
-    </main>
+    <>
+      <main>
+        <Title title={title} filterList={filterList} setFilterList={setFilterList} />
+        <ProductList filterCategory={filterCategory} clothList={filter} isLoading={isLoading} />
+      </main>
+    </>
   );
 };
 

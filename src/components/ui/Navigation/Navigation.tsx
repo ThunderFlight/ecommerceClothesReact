@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import styles from './Navigation.module.scss'
+import { Link } from 'react-router-dom';
 
 const navigationArray = [
-  { "BUY T-SHIRTS": "/shop" },
-  { WOMEN: "/womenCategory" },
-  { MEN: "/menCategory" },
-  { ABOUT: "/about" },
-  { CONTACT: "/contact" },
+  { "BUY T-SHIRTS": "shop" },
+  { WOMEN: "womenCategory" },
+  { MEN: "menCategory" },
+  { ABOUT: "about" },
+  { CONTACT: "contact" },
 ];
 
 interface prop {
@@ -19,7 +20,7 @@ const Navigation:FC<prop> = ({styleText}) => {
       {navigationArray.map((item, key) => {
         return (
           <li className={styles.navigationElement} key={key}>
-            <a href={Object.values(item)[0]}>{Object.keys(item)[0]}</a>
+            <Link to={Object.values(item)[0]}>{Object.keys(item)[0]}</Link>
           </li>
         );
       })}

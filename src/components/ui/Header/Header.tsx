@@ -33,12 +33,12 @@ const Header = () => {
       </div>
       <div className={styles.wrapper__userButtons}>
         <button className={styles.userButtonsBuySearch}>
-          <img src={magnifyingGlass} className={styles.imageButtonsUser} />
+          <img src={magnifyingGlass} className={styles.imageButtonsUser} alt='magnifying glass'/>
         </button>
         <div className={styles.fullBasketCostItems}>
           <p className={styles.fullCostItems}></p>
           <button className={styles.userButtonsBuySearch}>
-            <img src={basket} className={styles.imageButtonsUser} />
+            <img src={basket} className={styles.imageButtonsUser} alt='basket'/>
           </button>
         </div>
         <div>
